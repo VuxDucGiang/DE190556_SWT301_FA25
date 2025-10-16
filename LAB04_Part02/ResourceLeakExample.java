@@ -1,19 +1,26 @@
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ResourceLeakExample {
 
-    private static final Logger LOGGER = Logger.getLogger(ResourceLeakExample.class.getName());
+    private static final Logger logger =
+            Logger.getLogger(ResourceLeakExample.class.getName());
 
     public static void main(String[] args) {
-        // Sử dụng try-with-resources để tự động đóng reader
-        try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+        String fileName = "data.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                LOGGER.info(line); // dùng logger thay vì System.out.println
+                logger.log(Level.INFO, "{0}", line);
             }
         } catch (IOException e) {
-            LOGGER.severe("Error reading file: " + e.getMessage());
+            logger.log(Level.SEVERE, "I/O error while reading file", e);
+            logger.log(Level.SEVERE, "File: {0}", fileName);
         }
     }
 }

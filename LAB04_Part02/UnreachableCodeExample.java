@@ -1,14 +1,18 @@
+
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UnreachableCodeExample {
-    private static final Logger LOGGER = Logger.getLogger(UnreachableCodeExample.class.getName());
+    private static final Logger logger =
+            Logger.getLogger(UnreachableCodeExample.class.getName());
 
     public static int getNumber() {
-        LOGGER.info("Returning number 42"); // dùng logger thay vì println
-        return 42; // return phải nằm cuối -> không có code sau nó
+        logger.log(Level.INFO, "Preparing number...");
+        return 42;
     }
 
     public static void main(String[] args) {
-        LOGGER.info("Number is: " + getNumber()); // thay System.out.println bằng logger
+        int result = getNumber();
+        logger.log(Level.INFO, "Result: {0}", result);
     }
 }

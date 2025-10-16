@@ -1,16 +1,19 @@
+
+import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class NullPointerExample {
-    private static final Logger LOGGER = Logger.getLogger(NullPointerExample.class.getName());
+    private static final Logger logger =
+            Logger.getLogger(NullPointerExample.class.getName());
 
     public static void main(String[] args) {
-        String text = null;
+        String text = (args.length > 0) ? args[0] : null;
 
-        // FIX S2259: kiểm tra null trước khi gọi text.length()
-        if (text != null && text.length() > 0) {
-            LOGGER.info("Text is not empty"); // FIX S106: thay System.out.println bằng Logger
+        if (Objects.equals(text, "hi")) {
+            logger.log(Level.INFO, "Text equals 'hi'");
         } else {
-            LOGGER.warning("Text is null or empty");
+            logger.log(Level.INFO, "Text is null or not 'hi'");
         }
     }
 }

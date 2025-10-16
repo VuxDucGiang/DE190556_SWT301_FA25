@@ -1,23 +1,20 @@
+
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CatchGenericExceptionExample {
-    private static final Logger LOGGER = Logger.getLogger(CatchGenericExceptionExample.class.getName());
+    private static final Logger logger =
+            Logger.getLogger(CatchGenericExceptionExample.class.getName());
 
     public static void main(String[] args) {
-        try {
-            String s = null;
+        String s = (args != null && args.length > 0 && !args[0].isBlank()) ? args[0] : null;
 
-            // Kiểm tra null trước khi truy cập .length()
-            if (s == null) {
-                LOGGER.warning("Variable 's' is null");
-            } else if (s.length() == 0) {
-                LOGGER.info("String is empty");
-            } else {
-                LOGGER.info("String length: " + s.length());
-            }
-
-        } catch (Exception _) { // ✅ dùng unnamed pattern (Java 21+)
-            LOGGER.severe("Something went wrong");
+        if (s == null) {
+            logger.warning("Input 's' is null; skipping length computation");
+            return;
         }
+
+        int len = s.length();
+        logger.log(Level.INFO, "Length = {0}", len);
     }
 }
