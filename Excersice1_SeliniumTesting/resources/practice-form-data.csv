@@ -1,7 +1,0 @@
-firstName,lastName,email,gender,mobile,dateOfBirth,subjects,hobby,address,state,city,expectedResult
-Nguyen,Van A,nguyenvana@example.com,Male,0123456789,15 Jan 1990,Maths,Sports,123 Le Loi Street Ho Chi Minh City,NCR,Delhi,success
-Tran,Thi B,tranthib@example.com,Female,0987654321,20 Feb 1995,English,Reading,456 Nguyen Hue Street Hanoi,Uttar Pradesh,Agra,success
-Le,Van C,levanc@example.com,Male,0555666777,10 Mar 1992,Physics,Music,789 Tran Hung Dao Street Da Nang,Haryana,Karnal,success
-Pham,Thi D,phamthid@example.com,Female,0111222333,05 Apr 1993,Chemistry,Sports,321 Bach Dang Street Hai Phong,Rajasthan,Jaipur,success
-Hoang,Van E,hoangvane@example.com,Male,0999888777,25 May 1991,Biology,Reading,654 Le Duan Street Can Tho,NCR,Gurgaon,success
-
