@@ -71,7 +71,7 @@ public class LoginTest extends BaseTest{
     }
 
     @ParameterizedTest(name = "CSV File: {0} / {1}")
-    @Order(4)
+    @Order(3)
     @CsvFileSource(resources = "/login-data.csv", numLinesToSkip = 1)
     void testLoginFromCSV(String username, String password, String expected) {
         loginPage.navigate();

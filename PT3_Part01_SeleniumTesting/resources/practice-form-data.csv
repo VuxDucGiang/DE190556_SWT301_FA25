@@ -1,0 +1,5 @@
+firstName,lastName,email,gender,mobile,day,month,year,subjects,hobbies,picturePath,address,state,city
+John,Doe,john.doe@example.com,Male,1234567890,15,July,1990,Maths,Sports,,123 Main Street,NCR,Delhi
+Jane,Smith,jane.smith@test.com,Female,9876543210,25,March,1995,English,Reading,,456 Oak Avenue,Uttar Pradesh,Agra
+Alex,Johnson,alex.j@mail.com,Other,5555555555,10,December,2000,Computer Science,Music,,789 Pine Road,Haryana,Karnal
+Maria,Garcia,maria.garcia@email.com,Female,1112223333,5,January,1988,Physics,Sports;Reading,,321 Elm Street,Rajasthan,Jaipur

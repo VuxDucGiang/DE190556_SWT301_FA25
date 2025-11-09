@@ -24,6 +24,18 @@ public class BasePage {
         waitForVisibility(locator).click();
     }
 
+    // Click with JavaScript (for elements that might be intercepted)
+    protected void jsClick(By locator) {
+        WebElement element = waitForVisibility(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+    // Scroll to element
+    protected void scrollToElement(By locator) {
+        WebElement element = waitForVisibility(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+    }
+
     // Send keys safely
     protected void type(By locator, String text) {
         WebElement element = waitForVisibility(locator);
